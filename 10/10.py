@@ -3,9 +3,7 @@
 #b) Idem, porém para o 50º elemento.
 with open('input.txt') as file:
 	numeroInicial = file.read().strip()
-
 numeroDaVez = numeroInicial
-print(numeroDaVez)
 for _ in range(50): #Repetir 40 vezes
 	proximoNumero = ''
 	contagemDeDigitosRepetidos = 0
