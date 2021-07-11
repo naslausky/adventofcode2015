@@ -16,10 +16,10 @@ for linha in linhas: #Popula o dicionário
 		dicionarioDistancias[cidades[1]][cidades[0]] = distancia
 	else:
 		dicionarioDistancias[cidades[1]] = {cidades[0]:distancia}
-#Parte 1: Calculando a menor rota
-menorRotaAteAgora = []
-menorDistancia = None
+menoresRotas = {}
+maioresRotas = {} #Dicionários que relacionam cada cidade com a maior/menor distancia
 for cidadeInicial, distancias in dicionarioDistancias.items():
+#Parte 1: Calculando a menor rota para esta cidade inicial:
 	rotaAteAgora = [cidadeInicial]
 	distanciaAteAgora = 0
 	while len(rotaAteAgora) != len(dicionarioDistancias):
@@ -29,15 +29,8 @@ for cidadeInicial, distancias in dicionarioDistancias.items():
 				if distanciaMinima == distancia:
 					rotaAteAgora.append(cidade)
 					distanciaAteAgora+=distancia
-	if menorDistancia is None or distanciaAteAgora< menorDistancia:
-		menorDistancia = distanciaAteAgora
-		menorRotaAteAgora = rotaAteAgora[:]
-#print('Menor rota que passa por todas as cidades:', menorRotaAteAgora)
-print('Menor distância percorrida que passa por todas as cidades:', menorDistancia)
-#Parte 2: Calculando maior rota
-maiorRotaAteAgora = []
-maiorDistancia = 0
-for cidadeInicial, distancias in dicionarioDistancias.items():
+	menoresRotas[cidadeInicial] = distanciaAteAgora
+#Parte 2: Calculando a maior rota para esta cidade inicial:
 	rotaAteAgora = [cidadeInicial]
 	distanciaAteAgora = 0
 	while len(rotaAteAgora) != len(dicionarioDistancias):
@@ -47,8 +40,8 @@ for cidadeInicial, distancias in dicionarioDistancias.items():
 				if distanciaMaxima== distancia:
 					rotaAteAgora.append(cidade)
 					distanciaAteAgora+=distancia
-	if distanciaAteAgora> maiorDistancia:
-		maiorDistancia = distanciaAteAgora
-		maiorRotaAteAgora = rotaAteAgora[:]
-#print('Maior rota que passa por todas as cidades:', maiorRotaAteAgora)
+	maioresRotas[cidadeInicial] = distanciaAteAgora
+menorDistancia = min([valor for _,valor in menoresRotas.items()])
+print('Menor distância percorrida que passa por todas as cidades:', menorDistancia)
+maiorDistancia = max([valor for _,valor in maioresRotas.items()])
 print('Maior distância percorrida que passa por todas as cidades:', maiorDistancia)
