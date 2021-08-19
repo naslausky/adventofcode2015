@@ -1,6 +1,6 @@
 #Desafio do dia 06/12/2015
 #a)Receber uma lista de instruções acerca de booleanos dispostos em uma tabela de 1000x1000 elementos.
-# Dizer ao final das instruções quantos booleanos estão ativos
+# Dizer ao final das instruções quantos booleanos estão ativos.
 #b)Modificar as instruções para adequar inteiros ao invés de booleanos, e calcular a mesma coisa.
 
 with open('input.txt') as file:

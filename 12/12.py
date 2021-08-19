@@ -1,6 +1,6 @@
 #Desafio do dia 12/12/2015
 #a) Receber um json e contar quantos números ele tem.
-#b)
+#b) Idem, porém desconsiderar quaisquer objetos com o valor "red"
 import json
 with open('input.txt') as file:
 	jsonString = file.read().strip()

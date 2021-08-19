@@ -9,7 +9,7 @@ def encontrarSolucao(n): #Funcao que encontra solucao para dado numero de zeros
 	resposta = 0
 	while (True):
 		resultadoHash = hashlib.md5((chaveSecreta + str(resposta)).encode()).hexdigest()
-		if (resultadoHash[:n]) == '0'*n:
+		if resultadoHash.startswith('0'*n):
 			break
 		resposta+=1
 	return resposta

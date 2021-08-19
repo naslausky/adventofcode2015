@@ -4,7 +4,6 @@
 
 with open('input.txt') as file:
 	conexoes = file.read().splitlines()
-
 instrucoes = {} #Dicionário que relaciona cada nó a sua formação
 valores = {} #Dicionário que relaciona cada nó a seu valor, para caso passe duas vezes não calcular de novo
 for conexao in conexoes:

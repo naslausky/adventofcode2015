@@ -1,6 +1,6 @@
 #Desafio do dia 05/12/2015
 #a) Receber uma lista de string, e informar quantas destas acatam a um conjunto de regras.
-#b) Idem porém com outro conjunto de regras
+#b) Idem porém com outro conjunto de regras.
 with open('input.txt') as file:
 	strings = file.read().splitlines()
 numeroDeStringsQueAtendemARegra = 0
@@ -33,7 +33,7 @@ for string in strings:
 		if string.count(string[indiceCaracter:indiceCaracter+2])>1:
 			atendeANovaRegra1=True
 			break
-	atendeANovaRegra2 = False #Conter no mínimo um conjunto de 3 caracteres seguidos que o primeiro é igual ao último
+	atendeANovaRegra2 = False #Conter no mínimo um conjunto de 3 caracteres seguidos que o primeiro é igual ao último.
 	for indiceCaracter in range(len(string)-2): 
 		if string[indiceCaracter] == string[indiceCaracter+2]:
 			atendeANovaRegra2 = True
