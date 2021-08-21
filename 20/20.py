@@ -13,13 +13,20 @@ def menorNumeroDeCasa(numeroMinimo, Parte2 = False):
 	while numeroDePresentes < numeroMinimo:
 		numeroDePresentes = 0
 		numeroCasa += 1
-		limiteSuperior = int(math.floor(numeroCasa ** (1/2)))
-		elfoInicial = int(math.ceil(numeroCasa/50)) if Parte2 else 1
+		limiteSuperior = int(math.floor(numeroCasa ** (1/2))) 
+		elfoInicial = 1
 		for numeroElfo in range(elfoInicial,limiteSuperior+1):
 			if (numeroCasa % numeroElfo) == 0:
-				numeroDePresentes += numeroElfo*valorDeCadaElfo
-				if numeroCasa != numeroElfo**2: #Se ele chegar exatamente na raiz contaria 2x
-					numeroDePresentes += int(numeroCasa / numeroElfo) * valorDeCadaElfo
+				if Parte2:
+					if (numeroCasa/numeroElfo) < 50:
+						numeroDePresentes += numeroElfo * valorDeCadaElfo
+					if numeroCasa != numeroElfo**2:
+						if (numeroCasa/numeroElfo > numeroCasa/50):
+							numeroDePresentes+= int(numeroCasa/numeroElfo) * valorDeCadaElfo
+				else:
+					numeroDePresentes += numeroElfo*valorDeCadaElfo
+					if numeroCasa != numeroElfo**2: #Se ele chegar exatamente na raiz contaria 2x
+						numeroDePresentes += int(numeroCasa / numeroElfo) * valorDeCadaElfo
 	return numeroCasa
-print(menorNumeroDeCasa(numeroMinimo))
-#print(menorNumeroDeCasa(numeroMinimo, True))
+print("Casa de menor valor a alcançar", numeroMinimo, "presentes:", menorNumeroDeCasa(numeroMinimo))
+print("Com os elfos entregando até 50 casas, a casa de menor valor é:", menorNumeroDeCasa(numeroMinimo, True))
