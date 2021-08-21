@@ -22,7 +22,7 @@ def menorNumeroDeCasa(numeroMinimo, Parte2 = False):
 				if candidatos[0] == candidatos[1]: #Quando for a exata raiz, não calcular 2x
 					candidatos = [candidatos[0]]
 				for candidato in candidatos:
-					if not Parte2 or (candidato > (int(numeroCasa/50))):
+					if not Parte2 or (candidato >= (int(numeroCasa/50))):
 							soma+=candidato
 				numeroDePresentes += soma * valorDeCadaElfo	
 	return numeroCasa
