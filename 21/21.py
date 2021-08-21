@@ -60,7 +60,7 @@ def batalharEVerificarPreco(jogador):
 	else: #Salva o maior se ele perdeu.
 		maiorPreco = max(precoGasto, maiorPreco)
 
-#Escolhendo os equipamentos
+#Escolhendo os equipamentos:
 for arma in armas: #Obrigatório comprar uma arma, já foi escolhida.
 	for armadura in armaduras:
 		#Seus atributos já começam com o da arma, e vao incrementando com o resto:
@@ -85,5 +85,6 @@ for arma in armas: #Obrigatório comprar uma arma, já foi escolhida.
 					batalharEVerificarPreco(jogadorComTudo)
 			else:	
 				batalharEVerificarPreco(jogadorComArmaEArmadura)
+
 print('Menor preço gasto que ainda resulta em vitória:', menorPreco)
 print('Maior preço gasto que ainda resulta em derrota:', maiorPreco) 
