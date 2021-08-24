@@ -9,7 +9,6 @@ with open('input.txt') as file:
 		inimigo[chave] = int(valor)
 	inimigo['Poison Turns'] = 0
 
-
 movimentos = [
 {'Cost': 53, 'Damage': 4, 'Heal': 0, 'Shield Turns': 0, 'Poison Turns': 0,'Regen Turns': 0},
 {'Cost': 73, 'Damage': 2, 'Heal': 2, 'Shield Turns': 0, 'Poison Turns': 0,'Regen Turns': 0},
@@ -20,13 +19,12 @@ movimentos = [
 
 def verificarTerminoBatalha(jogador, inimigo): #Método que verifica se o jogo acabou. Retorna um booleano para tal, e outro para indicar quem ganhou.
 	if inimigo['Hit Points'] <= 0:
-		return True, True #Acabou, inimigo morreu
+		return True, True #Acabou, inimigo morreu.
 	if jogador['Hit Points'] <= 0:
-		return True,False #Acabou, jogador morreu
-	return False, False #Não acabou
+		return True,False #Acabou, jogador morreu.
+	return False, False #Não acabou.
 
 def turnoDoInimigo(jogador, inimigo):
-
 	#Verifica as condições especiais:
 	verificarEfeitosAtuais(jogador,inimigo)
 
@@ -57,7 +55,6 @@ def verificarEfeitosAtuais(jogador,inimigo): #Verifica, aplica, e reduz os conta
 
 minimoAteAgora = 100000
 def batalhar(jogador, inimigo, manaGastaAteAgora, Parte2 = False): #Roda um turno do jogador, um turno do inimigo, e segue. Retorna se ganhou, e quanto de mana gastou até o final vitorioso mais econômico.
-
 	global minimoAteAgora
 	if manaGastaAteAgora > minimoAteAgora: # Se ele já gastou mais do que uma outra vitória gastou, já para por aqui.
 		return False, -1
@@ -75,7 +72,7 @@ def batalhar(jogador, inimigo, manaGastaAteAgora, Parte2 = False): #Roda um turn
 	movimentosQuePodemSerExecutados = [movimento for movimento in movimentos if movimento['Cost'] <= jogador['Mana']] #Só pode executar os que ele tem mana suficiente.
 
 	for movimento in movimentosQuePodemSerExecutados:
-		jogadorNesteTurno = jogador.copy() #Pra não atrapalhar os outros movimentos
+		jogadorNesteTurno = jogador.copy() #Pra não atrapalhar os outros movimentos.
 		inimigoNesteTurno = inimigo.copy()
 
 		manaDesteMovimento = movimento['Cost'] #Diminui a mana gasta neste movimento e incrementa a mana total gasta até aqui.
@@ -88,7 +85,7 @@ def batalhar(jogador, inimigo, manaGastaAteAgora, Parte2 = False): #Roda um turn
 			jogadorNesteTurno['Hit Points'] += movimento['Heal']
 
 		elif movimento['Shield Turns']>0: #Shield.
-			if jogadorNesteTurno['Shield Turns'] > 0: #Não pode usar essa magia enquanto o efeito ainda estiver ativo
+			if jogadorNesteTurno['Shield Turns'] > 0: #Não pode usar essa magia enquanto o efeito ainda estiver ativo.
 				continue
 			else:
 				jogadorNesteTurno['Shield Turns'] = movimento['Shield Turns']
