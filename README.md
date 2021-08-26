@@ -16,7 +16,7 @@ Abaixo deixei uma tabela com o tempo que as minhas resoluções de cada desafio 
 
 Advent of code is a annual event that happens every december, up to the 25th, in the form of a [Advent Calendar](https://en.wikipedia.org/wiki/Advent_calendar). Every day puzzles, mostly related to programming, are released and doesn't necessarily require programming to solve it. In order to be answered, each puzzle needs only a final answer which depends on an input specific to each user. Every day the puzzle is released in the form of 2 parts related to each other. The second part may only be read and answered after correctly answering the first one.
 
-There is a score regarding the first hundred people who correctly answer each puzzle, but I mostly solve these without considering this side of the event. Some problems have been discussed with [friends]()[which]() [made]() [this]() experience better.
+There is a score regarding the first hundred people who correctly answer each puzzle, but I mostly solve these without considering this side of the event. Some problems have been discussed with [friends](https://github.com/heliocm) [which](https://github.com/molimat) [made](https://github.com/MariaBiancaIrace) [this](https://github.com/hieifn) experience better.
 
 Below I've left a table with the running time of each of my solutions. It's not the same as the complexity, but it may give a direction. Every script is always solving both parts, and I can't assure it's the best or optimal solution, neither that they work with a more generic input. I *can* assure that for my input they gave the correct answer. All programs have been solved using [Python3](https://www.python.org/) and my input is also within each day folder.
 
